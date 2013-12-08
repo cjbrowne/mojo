@@ -3,8 +3,11 @@ require([""],function() {
 		window.location.search = "setLng=" + $(this).val();
 	});
 	$("#registerButton").on('click',function(evt) {
-		$.get('/views/register',function(data) {
-			$("#content").html(data);
+		$.post('/register/',{
+			email: $("#loginUsername").val(),
+			password: $("#loginPassword").val()
+		},function(response) {
+			$("#content").html(response);
 		});
 	});
 });

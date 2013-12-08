@@ -11,7 +11,7 @@ require([""], function() {
     window.location.search = "setLng=" + $(this).val();
   });
   $("#registerButton").on("click", function(b) {
-    $.get("/views/register", function(a) {
+    $.post("/register/", {email:$("#loginUsername").val(), password:$("#loginPassword").val()}, function(a) {
       $("#content").html(a);
     });
   });

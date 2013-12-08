@@ -1,0 +1,9 @@
+{
+	"name": "LoginDB",
+	"version": "0.0.0",
+	"private": true,
+	"main": "LoginDB.js",
+	"dependencies": {
+		"mongoose" : "*"
+	}
+}

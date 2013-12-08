@@ -14,7 +14,8 @@
 		"i18next": "*",
 		"stylus": "*",
 		"nib": "*",
-		"socket.io": "*"
+		"socket.io": "*",
+		"mongoose": "*"
 	},
 	"engines": {
 		"node": ">=0.10.4"

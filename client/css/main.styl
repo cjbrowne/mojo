@@ -26,19 +26,42 @@ input_foreground = #999
 	.loginField
 		width 100%
 		border solid 1px header_background
-		float right
-		clear both
 		background-color input_background
 		color input_foreground
 		&:focus
 			outline none
-			border-color #99F
-			box-shadow 0 0 5px #99F
+			border-color lighten(input_background,50%)
+			box-shadow 0 0 5px lighten(input_background,50%)
 		placeholder((font-style italic) (text-align center))
 	.loginButton
 		float right
 		clear none
 		width 50%
+#content
+	background-color body_background
+	height 90vh
+	width 100vw
+#register
+	width 50vw
+	padding 1em
+	margin 0 auto
+	display flex
+	flex-flow column
+	.registerField
+		width 70%
+		border solid 1px body_background
+		background-color input_background
+		color input_foreground
+		align-self center
+		&:focus
+			outline none
+			border-color lighten(input_background,50%)
+			box-shadow 0 0 5px lighten(input_background,50%)
+		placeholder((font-style italic) (text-align center))
+	.registerButton
+		width 20%
+		align-self flex-end
+
 #languageBar
 	flex 0 1 auto
 	order 0

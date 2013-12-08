@@ -5,7 +5,11 @@ var express = require("express"),
 	supportedLanguages = ['en-GB','sv-SE'],
 	stylus = require('stylus'),
 	nib = require('nib'),
-	io = require('socket.io').listen(server);
+	io = require('socket.io').listen(server),
+	mongoose = require('mongoose'),
+	loginDB = require('../common/LoginDB.js');
+
+mongoose.connect("mongodb://localhost/loginDB");
 
 function compile(str,path) {
 	return stylus(str)
@@ -59,12 +63,24 @@ app.get('/views/:view',function(req,res) {
 	res.render(req.params.view + '.jade');
 });
 
+app.get('/test/email_error',function(req,res) {
+	res.render('error',{title:"error.email_taken_title",body:"error.email_taken_body"});
+})
+
 app.get('/js/Mojo.js',function(req,res) {
 	res.sendfile('js/Mojo.js');
 });
 
 app.get('/js/vendor/:file',function(req,res) {
 	res.sendfile('js/vendor/' + req.params.file)
+});
+
+app.post('/register',function(req,res) {
+	loginDB.User.findOne({'email': req.body.email},function(err,person) {
+		if(!err && person) {
+			res.render('error',{title:"error.email_taken_title",body:"error.email_taken_body"});
+		}
+	})
 });
 
 server.listen(process.env.PORT || 80);
