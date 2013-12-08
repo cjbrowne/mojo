@@ -1,0 +1,61 @@
+@import "reset.styl"
+
+header_background = #333
+body_background = #CCC
+body_foreground = #000
+header_foreground = #CCF
+input_background = #335
+input_foreground = #999
+
+#header
+	width 100vw
+	height 10vh
+	background-color header_background
+	padding 1em
+	display flex
+	align-items center
+	flex-flow row
+	justify-content flex-end
+	color header_foreground
+#login
+	width 20vw
+	padding 1em
+	margin 1em
+	flex 0 1 auto
+	order 1
+	.loginField
+		width 100%
+		border solid 1px header_background
+		float right
+		clear both
+		background-color input_background
+		color input_foreground
+		&:focus
+			outline none
+			border-color #99F
+			box-shadow 0 0 5px #99F
+		placeholder((font-style italic) (text-align center))
+	.loginButton
+		float right
+		clear none
+		width 50%
+#languageBar
+	flex 0 1 auto
+	order 0
+	font-family 'Arial', 'Helvetica', sans-serif
+	font-size 18pt
+	display flex
+	flex-flow column
+	align-items center
+	.label
+		flex 0 1 auto
+		order 0
+	#languageChooser
+		flex 0 1 auto
+		order 1
+		text-align center
+		background-color input_background
+		color input_foreground
+		option
+			text-align center // some day, maybe...
+			font-size 12pt

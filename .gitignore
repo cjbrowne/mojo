@@ -1,0 +1,5 @@
+client/node_modules
+login/node_modules
+world/node_modules
+*.pseudocode
+NOTES

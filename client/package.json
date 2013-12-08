@@ -1,0 +1,22 @@
+{
+	"name": "mojo-client",
+	"version": "0.0.1",
+	"description": "The client (static) server for the Mojo JavaScript MMO game.",
+	"author": "Chris Browne <yoda2031@gmail.com>",
+	"scripts": {
+		"start": "node app",
+		"predeploy": "node compile"
+	},
+	"dependencies": {
+		"closurecompiler": "1.3.x",
+		"jade": "*",
+		"express": "*",
+		"i18next": "*",
+		"stylus": "*",
+		"nib": "*",
+		"socket.io": "*"
+	},
+	"engines": {
+		"node": ">=0.10.4"
+	}
+}
