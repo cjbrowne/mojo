@@ -1,0 +1,6 @@
+{
+	"name": "mojo-world",
+	"dependencies": {
+		"socket.io": "*"
+	}
+}
