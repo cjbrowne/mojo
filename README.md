@@ -14,6 +14,12 @@ Get yourself `nodemon` and set it up running on the 'app.js' script in the clien
 
 Linux Note: Prepend sudo to nodemon if you want to run the server on a privileged port (e.g. 80).  This is not necessary for the `compile.js` script.
 
+# Notes on version numbering
+
+Major version number (x.0.0): Major content changes (e.g. "expansion pack")
+Minor version number (0.x.0): Bug fixes, balance adjustments, minor (but important) features
+Patch version number (0.0.x): Hot fixes (applied live without restarting server)
+
 # Documentation
 
 To be added

@@ -28,6 +28,8 @@ Mojo version 1.0 is a full-fledged MMORPG system including content, characters, 
 			- Button
 			- Window
 			- Dialog
+			- ItemSlot
+			- ActionSlot
 		- Events
 			- [Element] Clicked
 			- [Element] MouseOver
@@ -53,6 +55,10 @@ Mojo version 1.0 is a full-fledged MMORPG system including content, characters, 
 	- List World Server instances
 	- Get guild players list
 	- Get friend list
+	- Add friend
+	- Remove friend
+	- Block player
+	- Unblock player
 	- Send chat message
 	- Join chat channel
 	- Leave chat channel
@@ -64,6 +70,7 @@ Mojo version 1.0 is a full-fledged MMORPG system including content, characters, 
 	- Speed limits: if a player moves further than a certain threshold in a certain time period, consider it a speedhack.
 	- Combat limits: impose cooldown periods on all spells and abilities.  If a player attempts to cast a spell during a cooldown period, silently ignore the cast.
 	- API limits: if a 'bad' API request (e.g. attempt to list characters of another playerId) occurs, register it as a potential hack attempt by the originating account.
+	- Anti-botting: attempt to automatically detect bot scripts and punish the account responsible.
 - Client-facing API
 	- List Characters
 	- Get Character information (for "inspection" and "dressing room" UI elements)

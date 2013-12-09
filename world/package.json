@@ -1,6 +1,8 @@
 {
 	"name": "mojo-world",
 	"dependencies": {
-		"socket.io": "*"
+		"socket.io": "*",
+		"mongoose": "*",
+		"redis": "*"
 	}
 }
