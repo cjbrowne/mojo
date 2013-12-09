@@ -14,11 +14,21 @@ Requests that the user enter the world as the character specified.
 
 Indicates to the server that the client has moved.
 
-## Required Properties
+### Required Properties
  - x: the new X position of the player
  - y: the new Y position of the player
 
-## Optional Properties
+### Optional Properties
+N/A
+
+## `jump`
+
+Indicates to the server that the client has jumped.
+
+### Required Properties
+N/A
+
+### Optional Properties
 N/A
 
 # Response (server->client)
