@@ -1,0 +1,7 @@
+!!! 5
+html
+	body
+		h1= t("email.welcome.header")
+		p= t("email.welcome.introduction")
+		span= t("email.welcome.token_instructions")
+		a(href="http://#{host}:#{port}/verify/#{token}")

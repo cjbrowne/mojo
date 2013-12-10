@@ -1,8 +1,27 @@
 {
-	"title": "Mojo",
-	"login": "Logga in",
-	"chooseLang": "Välj språk",
-	"register": "Registera",
-	"email_address": "E-postadress",
-	"password": "Lösenord"
+    "title": "Mojo",
+    "login": {
+        "email_address": "E-postadress",
+        "password": "Lösenord",
+        "register": "Registrera",
+        "submit": "Logga in",
+        "success": {
+            "title": "Du har loggat i",
+            "body": "Nu kan du spelar spelet"
+        }
+    },
+    "chooseLang": "Välj språk",
+    "en-GB": "English (Great Britain)",
+    "sv-SE": "Svenska",
+    "subscription": {
+        "frozen": "Frysit"
+    },
+    "error": {
+        "login": {
+            "bad_user_or_password": {
+                "title": "Epostadress eller lösenord är fel.",
+                "body": "Det gick inte att logga i eftersom lösenord eller epostadress hittas inte i systemet."
+            }
+        }
+    }
 }

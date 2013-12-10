@@ -15,7 +15,9 @@
 		"stylus": "*",
 		"nib": "*",
 		"socket.io": "*",
-		"mongoose": "*"
+		"mongoose": "*",
+		"nodemailer": "*",
+		"merge":"*"
 	},
 	"engines": {
 		"node": ">=0.10.4"

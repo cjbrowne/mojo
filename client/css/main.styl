@@ -1,4 +1,6 @@
 @import "reset.styl"
+@import "nib/vendor"
+vendor-prefixes = webkit moz o ms official
 
 header_background = #333
 body_background = #CCC
@@ -6,21 +8,34 @@ body_foreground = #000
 header_foreground = #CCF
 input_background = #335
 input_foreground = #999
+error_background = #FCC
+error_foreground = #900
 
 #header
 	width 100vw
-	height 10vh
+	max-width 100vw
+	height 15vh
+	max-height 15vh
 	background-color header_background
-	padding 1em
 	display flex
 	align-items center
 	flex-flow row
 	justify-content flex-end
 	color header_foreground
+
+input:not([type="button"])
+	border solid 1px transparent
+	background-color input_background
+	color input_foreground
+	&:focus
+		outline none
+		border-color lighten(input_background,50%)
+		box-shadow 0 0 5px lighten(input_background,50%)
+	placeholder((font-style italic) (text-align center))
+
 #login
 	width 20vw
-	padding 1em
-	margin 1em
+	padding 1em	
 	flex 0 1 auto
 	order 1
 	.loginField
@@ -39,8 +54,13 @@ input_foreground = #999
 		width 50%
 #content
 	background-color body_background
-	height 90vh
+	height 85vh
 	width 100vw
+	display flex
+	flex-flow row nowrap
+	align-items center
+	justify-content center
+	align-content center
 #register
 	width 50vw
 	padding 1em
@@ -82,3 +102,52 @@ input_foreground = #999
 		option
 			text-align center // some day, maybe...
 			font-size 12pt
+
+
+modal-dialog(c)
+	display block
+	background-color c
+	color dark(c) ? lighten(c,90%) : darken(c,90%)
+	width 50vw
+	border solid 3px darken(c,75%)
+	padding 1em
+	font-family 'Arial', 'Helvetica', sans-serif
+	margin-top -40vh
+	h1
+		text-align center
+		font-size 16pt
+		hline_color = dark(darken(c,5%)) ? #000 : #FFF
+		border-bottom solid 1px hline_color
+	p
+		font-size 12pt
+		text-indent 2em
+		padding 1em
+
+#error
+	modal-dialog(error_background)
+
+#message
+	modal-dialog(#99F)
+
+#verifyPasswordForm
+	display flex
+	flex-flow column nowrap
+	align-items center
+	width 30%
+	margin 0 auto
+	#verifyPasswordSubmit,#verifyPasswordInput
+		width 100%
+
+#infobox
+	display flex
+	flex-flow column nowrap
+	align-items center
+	flex 0 1 auto
+	order 1
+	padding 0 2em
+	h1
+		font-family 'Arial', 'Helvetica', sans-serif
+		font-size 18pt
+		text-align center
+	#username
+		color #990

@@ -1,0 +1,14 @@
+extends layout
+block content
+	if error
+		#error
+			h1= t(error.title)
+			p= t(error.body)
+	else
+		#message
+			h1= t("verify.success.title")
+			p= t("verify.success.body_pre") + user + t("verify.success.body_post")
+			#verifiedEmail(style="display:none")= user
+			form#verifyPasswordForm
+				input#verifyPasswordInput(type="password",placeholder="#{t('verify.password_form.password_input')}")
+				input#verifyPasswordSubmit(type="button",value="#{t('verify.password_form.submit')}")

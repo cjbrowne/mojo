@@ -1,10 +1,75 @@
 {
     "title": "Mojo",
-    "login": "Login",
     "chooseLang": "Select Language",
     "en-GB": "English (Great Britain)",
     "sv-SE": "Svenska",
-    "register": "Register",
-    "email_address": "Email Address",
-    "password": "Password"
+    "error": {
+        "register": {
+            "missing_email_or_password": {
+                "title": "Missing Email Address or Password",
+                "body": "You must fill in your email address and choose a password in order to register an account."
+            },
+            "compose_email_failed": {
+                "title": "Could not compose email",
+                "body": "The server is misconfigured and cannot send confirmation emails.  This is a serious bug and must be reported immediately."
+            },
+            "email_taken": {
+                "title": "Email address already taken",
+                "body": "The email address you're trying to use to register has already been registered."
+            }
+        },
+        "verify": {
+            "already_verified": {
+                "title": "This email address has already been verified.",
+                "body": "The email address associated with this token has already been verified.  Please get in touch with your email provider in case of a security breach."
+            }
+        },
+        "login": {
+            "missing_email_or_password": {
+                "title": "Username or password not provided to login form.",
+                "body": "You tried to log in (or verify your password) but you didn't provide enough information.  Please try again."
+            },
+            "bad_user_or_password": {
+                "title": "Unrecognised username or password",
+                "body": "The username and password combination you provided was not found in the database.  Please make sure you typed your password correctly and try again."
+            }
+        }
+    },
+    "email": {
+        "welcome": {
+            "header": "Welcome to Mojo!",
+            "introduction": "Welcome to the online MMORPG, Mojo!",
+            "token_instructions": "Please copy/paste the link below into your browser to continue with the registration process."
+        }
+    },
+    "registration": {
+        "welcome": {
+            "title": "Welcome to Mojo!",
+            "body": "Your account is being prepared.  When it's ready, you will receive an email with a verification link."
+        }
+    },
+    "verify": {
+        "success": {
+            "title": "Verifying email address",
+            "body_pre": "The email address (",
+            "body_post": ") has been successfully verified!  Please type your password below to log in and complete the verification step."
+        },
+        "password_form": {
+            "password_input": "Password",
+            "submit": "Verify"
+        }
+    },
+    "login": {
+        "email_address": "Email Address",
+        "password": "Password",
+        "register": "Register",
+        "submit": "Login",
+        "success": {
+            "title": "Successfully logged in!",
+            "body": "You are now logged in"
+        }
+    },
+    "subscription": {
+        "frozen": "Frozen"
+    }
 }
