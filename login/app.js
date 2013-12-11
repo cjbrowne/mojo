@@ -11,8 +11,7 @@ var config = require('./config.js'),
 	mongoose = require('mongoose'),
 	loginDB = require('../common/LoginDB.js')(mongoose),
 	//Cookies = require('cookies'),
-	handlers = require('./socket_handlers.js')(loginDB);
-
+	handlers = require('./socket_handlers.js')(loginDB,require('./WorldServer.js'));
 mongoose.connect(config.mongoose.connect_string);
 
 // allows us to keep this in sync with the client's redis store

@@ -1,3 +1,4 @@
+var worldConfig = require('../world/config.js');
 module.exports = {
 	port: 5000,
 	redis: {
@@ -9,5 +10,6 @@ module.exports = {
 	cookieSecret: "cookiedough",
 	mongoose: {
 		connect_string: "mongodb://localhost/loginDB"
-	}
+	},
+	world: worldConfig
 }
