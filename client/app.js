@@ -11,7 +11,8 @@ var express = require("express"),
 	crypto = require('crypto'),
 	mailer = require('nodemailer'),
 	config = require('./config.js'),
-	merge = require('merge');
+	merge = require('merge'),
+	RedisStore = require("connect-redis")(express);
 
 // compile the client-side library when the server starts (simplifies development)
 require('./compile.js')();
@@ -48,7 +49,16 @@ app.configure(function() {
 	app.use(express.logger({format:'dev'}));
 	app.use(express.bodyParser());
 	app.use(express.cookieParser());
-	app.use(express.session({secret: config.session_secret}));
+	app.use(express.session({
+		secret: config.session_secret,
+		store: new RedisStore({
+			host: 'localhost',
+			port: 6379,
+			db: 2,
+			pass: config.redis.password
+		}),
+		key: "express.sid"
+	}));
 	app.use(i18next.handle);
 	app.use(stylus.middleware({
 		src:__dirname,
@@ -251,6 +261,16 @@ app.post('/register',function(req,res) {
 			}
 		});
 	}
+});
+
+// API for getting client-side config dynamically
+app.get('/client_config',function(req,res) {
+	res.json(config.client);
+});
+
+// pretty raw because I can handle errors on the client end and there's nothing a hacker can get from this
+app.get('/client_config/:area',function(req,res) {
+	res.json(config.client[area]);
 });
 
 server.listen(config.port);

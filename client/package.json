@@ -17,7 +17,8 @@
 		"socket.io": "*",
 		"mongoose": "*",
 		"nodemailer": "*",
-		"merge":"*"
+		"merge":"*",
+		"connect-redis":"*"
 	},
 	"engines": {
 		"node": ">=0.10.4"

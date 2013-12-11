@@ -71,5 +71,8 @@
     },
     "subscription": {
         "frozen": "Frozen"
+    },
+    "mainmenu": {
+        "entergame": "Enter Game"
     }
 }

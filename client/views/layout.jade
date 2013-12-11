@@ -9,6 +9,9 @@ html(lang="#{i18n.lng()}")
 	body
 		#header
 			img#logo(src='/img/logo.png')
+			ul#menu
+				li
+					input#enterGame(type="button",value="#{t('mainmenu.entergame')}")
 			include infobox
 			include login
 			#languageBar

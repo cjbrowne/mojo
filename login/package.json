@@ -1,0 +1,11 @@
+{
+	"name": "mojo-login",
+	"description": "Login server for Mojo Javascript MMO",
+	"dependencies": {
+		"socket.io": "*",
+		"redis": "*",
+		"mongoose": "*",
+		"cookie-signature":"*",
+		"cookies": "*"
+	}
+}

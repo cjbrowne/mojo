@@ -1,4 +1,11 @@
-require([""],function() {
+require(["LoginClient","GetConfig","Renderer"],function(LoginClient,GetConfig,Renderer) {
+	var conf = new GetConfig();
+	var login;
+	// config retrieval is async
+	conf.retrieveAll(function(c) {
+		login = new LoginClient(c.login);
+		login.connect();
+	});
 	function update_login_status() {
 		$.get("/me/",function(response) {
 			if(response.email) {
@@ -63,5 +70,17 @@ require([""],function() {
 				$("#message").fadeOut('slow');
 			},2000);
 		});
+	});
+	$("#enterGame").on('click',function(evt) {
+		var renderer = new Renderer();
+		renderer.init();
+		if(login.connected) {
+			login.getWorldList(function(worldList) {
+				console.log(worldList);
+				renderer.drawWorldList(worldList);
+			});
+		} else {
+			// TODO: inform user of error, suggest that it's probably temporary and attempt to reconnect to login server
+		}
 	});
 });
