@@ -30,9 +30,11 @@ require(["LoginClient","GetConfig","Renderer"],function(LoginClient,GetConfig,Re
 				$("#subscriptionStatus").html(response.subscription_status_translated).css({
 					color:sub_color
 				});
+				$("#enterGame").show();
 			} else {
 				$("#login").show();
 				$("#infobox").hide();
+				$("#enterGame").hide();
 			}
 		});
 	}
@@ -73,14 +75,15 @@ require(["LoginClient","GetConfig","Renderer"],function(LoginClient,GetConfig,Re
 	});
 	$("#enterGame").on('click',function(evt) {
 		var renderer = new Renderer();
-		renderer.init();
-		if(login.connected) {
-			login.getWorldList(function(worldList) {
-				console.log(worldList);
-				renderer.drawWorldList(worldList);
-			});
-		} else {
-			// TODO: inform user of error, suggest that it's probably temporary and attempt to reconnect to login server
-		}
+		renderer.init(function() {
+			if(login.connected) {
+				login.getWorldList(function(worldList) {
+					renderer.drawWorldList(worldList);
+				});
+				$("#enterGame").hide(); // otherwise the user might click it again, leading to buggy behaviour
+			} else {
+				// TODO: inform user of error, suggest that it's probably temporary and attempt to reconnect to login server
+			}
+		});
 	});
 });

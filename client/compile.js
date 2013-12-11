@@ -5,7 +5,7 @@ module.exports = function() {
 	ClosureCompiler.compile(
 		fs.readdirSync('js/src').map(function(filename) { return "js/src/" + filename; }),
 		{
-			compilation_level: "SIMPLE_OPTIMIZATIONS",
+			compilation_level: "WHITESPACE_ONLY",
 			formatting: "PRETTY_PRINT"
 		},
 		function(error,result) {

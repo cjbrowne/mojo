@@ -2,6 +2,7 @@ doctype 5
 html(lang="#{i18n.lng()}")
 	head
 		title= t('title')
+		script(type='text/javascript', src='/js/vendor/three.js')
 		script(type='text/javascript', src='/socket.io/socket.io.js')
 		script(type='text/javascript', src='/js/vendor/jquery.js')
 		script(type='text/javascript', src='/js/vendor/require.js', data-main='/js/Mojo.js')

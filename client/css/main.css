@@ -51,3 +51,5 @@ input:not([type="button"]):-ms-input-placeholder{font-style:italic;text-align:ce
 #infobox{display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-ms-flexbox;display:box;display:flex;-webkit-box-orient:vertical;-moz-box-orient:vertical;-o-box-orient:vertical;-webkit-box-lines:single;-moz-box-lines:single;-o-box-lines:single;-webkit-flex-flow:column nowrap;-ms-flex-flow:column nowrap;flex-flow:column nowrap;-webkit-box-align:center;-moz-box-align:center;-o-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;-webkit-box-flex:1;-moz-box-flex:1;-o-box-flex:1;box-flex:1;-webkit-flex:0 1 auto;-ms-flex:0 1 auto;flex:0 1 auto;-webkit-box-ordinal-group:1;-moz-box-ordinal-group:1;-o-box-ordinal-group:1;-ms-flex-order:1;-webkit-order:1;order:1;padding:0 2em;}
 #infobox h1{font-family:'Arial','Helvetica',sans-serif;font-size:18pt;text-align:center}
 #infobox #username{color:#990}
+#world{width:100vw;height:85vh;position:absolute;top:15vh;left:0;background-color:#000}
+#hud{width:100vw;height:85vh;position:absolute;top:15vh;left:0;background-color:transparent}

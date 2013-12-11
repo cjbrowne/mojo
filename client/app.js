@@ -2,7 +2,7 @@ var express = require("express"),
 	app = express(),
 	server = require('http').createServer(app),
 	i18next = require('i18next'),
-	supportedLanguages = ['en-GB','sv-SE'],
+	supportedLanguages = ['en','sv'],
 	stylus = require('stylus'),
 	nib = require('nib'),
 	io = require('socket.io').listen(server),
@@ -97,6 +97,10 @@ app.get('/js/Mojo.js',function(req,res) {
 app.get('/js/vendor/:file',function(req,res) {
 	res.sendfile('js/vendor/' + req.params.file)
 });
+
+app.get('/js/MojoUI/:file',function(req,res) {
+	res.sendfile('js/MojoUI/' + req.params.file);
+})
 
 function create_email_token() {
 	var r = crypto.randomBytes(48);

@@ -74,5 +74,7 @@
     },
     "mainmenu": {
         "entergame": "Enter Game"
-    }
+    },
+    "en": "English",
+    "sv": "Svenska"
 }
